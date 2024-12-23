@@ -25,9 +25,9 @@ namespace inyata_backend.Controllers
                 return BadRequest("User data is invalid.");
             }
 
-            newUser.Id = Users.Count > 0 ? Users.Max(u => u.Id) + 1 : 1;
+            newUser.UserId = Users.Count > 0 ? Users.Max(u => u.UserId) + 1 : 1;
             Users.Add(newUser);
-            return CreatedAtAction(nameof(GetUserById), new { id = newUser.Id }, newUser);
+            return CreatedAtAction(nameof(GetUserById), new { id = newUser.UserId }, newUser);
         }
 
         // GET: api/users/{id}
